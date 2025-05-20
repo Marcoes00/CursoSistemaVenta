@@ -76,18 +76,20 @@ namespace CapaPresentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            dgvData.Rows.Add(new object[] {"",txtid.Text, txtDocumento.Text, txtNombreCompleto.Text, txtCorreo.Text, txtClave.Text, 
-                ((OpcionCombo)cboRol.SelectedItem).Valor.ToString(),
-                ((OpcionCombo)cboRol.SelectedItem).Texto.ToString(),
-                ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString(),
-                ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString(),
-            });
+            //dgvData.Rows.Add(new object[] {"",txtid.Text, txtDocumento.Text, txtNombreCompleto.Text, txtCorreo.Text, txtClave.Text, 
+            //    ((OpcionCombo)cboRol.SelectedItem).Valor.ToString(),
+            //    ((OpcionCombo)cboRol.SelectedItem).Texto.ToString(),
+            //    ((OpcionCombo)cboEstado.SelectedItem).Valor.ToString(),
+            //    ((OpcionCombo)cboEstado.SelectedItem).Texto.ToString(),
+            //});
 
-            Limpiar();
+
+            //Limpiar();
         }
 
         private void Limpiar()
         {
+            txtindice.Text = "-1";
             txtid.Text = "0";
             txtDocumento.Text = "";
             txtNombreCompleto.Text = "";
@@ -133,6 +135,7 @@ namespace CapaPresentacion
 
                 if(indice >= 0)
                 {
+                    txtindice.Text = indice.ToString();
                     txtid.Text = dgvData.Rows[indice].Cells["Id"].Value.ToString();
                     txtDocumento.Text = dgvData.Rows[indice].Cells["Documento"].Value.ToString();
                     txtNombreCompleto.Text = dgvData.Rows[indice].Cells["NombreCompleto"].Value.ToString();
